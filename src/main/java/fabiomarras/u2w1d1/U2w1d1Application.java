@@ -14,8 +14,10 @@ public class U2w1d1Application {
 
 	public static void configurationClass() {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(U2w1d1Application.class);
-		System.out.println(ctx.getBean("getPizzaIMargherita"));
-		System.out.println(ctx.getBean("getPizzaHawaiian"));
+//		System.out.println(ctx.getBean("allPizzas"));
+//		System.out.println(ctx.getBean("allDrinks"));
+//		System.out.println(ctx.getBean("allTopings"));
+		System.out.println(ctx.getBean("allMenù"));
 		ctx.close();
 	}
 
