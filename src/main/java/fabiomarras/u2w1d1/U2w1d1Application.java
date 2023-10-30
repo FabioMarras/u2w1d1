@@ -9,12 +9,15 @@ public class U2w1d1Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(U2w1d1Application.class, args);
+		configurationClass();
 	}
 
 	public static void configurationClass() {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(U2w1d1Application.class);
-		System.out.println(ctx.getBean("getPizza"));
+		System.out.println(ctx.getBean("getPizzaIMargherita"));
+		System.out.println(ctx.getBean("getPizzaHawaiian"));
 		ctx.close();
 	}
+
 
 }
