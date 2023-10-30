@@ -17,9 +17,9 @@ public class U2w1d1Application {
 //		System.out.println(ctx.getBean("allPizzas"));
 //		System.out.println(ctx.getBean("allDrinks"));
 //		System.out.println(ctx.getBean("allTopings"));
-		System.out.println(ctx.getBean("allMenù"));
+//		System.out.println(ctx.getBean("allMenù"));
+		System.out.println(ctx.getBean("PizzaIMargherita"));
+		System.out.println(ctx.getBean("PizzaHawaiian"));
 		ctx.close();
 	}
-
-
 }

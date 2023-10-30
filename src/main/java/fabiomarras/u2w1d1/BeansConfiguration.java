@@ -15,22 +15,25 @@ import java.util.List;
 @Configuration
 public class BeansConfiguration {
     @Bean
-    Pizzas PizzaIMargherita() {
-        return new Pizzas("Margherita", "Tomato, cheese");
+    public Pizzas PizzaIMargherita(List<Toppings> allTopings) {
+        List<Toppings> margheritaToppings = Arrays.asList(Cheese(), Tomato());
+        return new Pizzas("Margherita", "Tomato, cheese", 1104,4.99, margheritaToppings);
     }
 
     @Bean
-    Pizzas PizzaHawaiian() {
-        return new Pizzas("Hawaiian", "Tomato, cheese, ham, pineaaple");
+    Pizzas PizzaHawaiian(List<Toppings> allTopings) {
+        List<Toppings> HawaiianToppings = Arrays.asList(Cheese(), Tomato(), Ham(), Pineaaple());
+        return new Pizzas("Hawaiian", "Tomato, cheese, ham, pineaaple", 1024, 6.49, HawaiianToppings);
     }
 
     @Bean
-    Pizzas PizzaSalami() {
-        return new Pizzas("Salami", "Tomato, cheese, Salami");
+    Pizzas PizzaSalami(List<Toppings> allTopings) {
+        List<Toppings> SalamiToppings = Arrays.asList(Cheese(), Tomato(), Salami());
+        return new Pizzas("Salami", "Tomato, cheese, Salami", 1160, 5.99, SalamiToppings);
     }
     @Bean
-    public List<Pizzas> allPizzas() {
-        return Arrays.asList(PizzaIMargherita(), PizzaSalami(), PizzaHawaiian());
+    public List<Pizzas> allPizzas(List<Toppings> allTopings) {
+        return Arrays.asList(PizzaIMargherita(allTopings), PizzaSalami(allTopings), PizzaHawaiian(allTopings));
     }
 
     @Bean
@@ -57,6 +60,10 @@ public class BeansConfiguration {
         return new Toppings("Cheese", "92", "0.69$");
     }
     @Bean
+    public Toppings Tomato() {
+        return new Toppings("Tomato", "50", "0.99$");
+    }
+    @Bean
     public Toppings Ham() {
         return new Toppings("Ham", "35", "0.99$");
     }
@@ -74,7 +81,7 @@ public class BeansConfiguration {
     }
     @Bean
     public List<Toppings> allTopings() {
-        return Arrays.asList(Cheese(), Ham(),Onions(), Pineaaple(), Salami());
+        return Arrays.asList(Cheese(), Tomato(), Ham(),Onions(), Pineaaple(), Salami());
     }
     @Bean
     public Menù allMenù (List<Pizzas> pizzas, List<Drinks> drinks, List<Toppings> toppings) {
