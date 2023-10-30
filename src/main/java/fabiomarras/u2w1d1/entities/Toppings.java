@@ -4,18 +4,26 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
 @Setter
+@Getter
 @ToString
 public class Toppings {
 
     private String name;
-    private String calories;
-    private String price;
+    private int calories;
+    private Double price;
 
-    public Toppings(String name, String calories, String price) {
+    public Toppings(String name, int calories, Double price) {
         this.name = name;
         this.calories = calories;
         this.price = price;
+    }
+
+    public int getCalories() {
+        return calories;
+    }
+
+    public Double getPrice() {
+        return price;
     }
 }

@@ -11,14 +11,14 @@ import java.util.List;
 @ToString
 public class Pizzas {
     private String name;
-    private String ingredients;
     private int calories;
-    private double price;
+    private Double price;
+    private String BaseIngredients = "Cheese and Tomato";
     private List<Toppings> toppings;
 
-    public Pizzas(String name, String ingredients, int calories, double price, List<Toppings> toppings) {
+    public Pizzas(String name, int calories, Double price, List<Toppings> toppings) {
         this.name = name;
-        this.ingredients = ingredients;
+        this.BaseIngredients = BaseIngredients;
         this.calories = calories;
         this.price = price;
         this.toppings = toppings;
